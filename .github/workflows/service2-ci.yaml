@@ -9,6 +9,10 @@ defaults:
   run:
     shell: bash
     working-directory: ./service2
+    
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 name: Check and Lint
 jobs:
