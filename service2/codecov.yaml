@@ -1,4 +1,4 @@
-coverage: # https://docs.codecov.com/docs/codecovyml-reference#coverage
+coverage: 
   precision: 1 # e.g. 89.1%
   round: down
   range: 85..100 # https://docs.codecov.com/docs/coverage-configuration#section-range
@@ -6,6 +6,6 @@ coverage: # https://docs.codecov.com/docs/codecovyml-reference#coverage
     project:
       default:
         threshold: 1% # Avoid false negatives
-comment: # https://docs.codecov.com/docs/pull-request-comments
+comment: 
   # make the comments less noisy
   require_changes: true
