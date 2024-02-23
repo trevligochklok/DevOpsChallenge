@@ -7,5 +7,4 @@ coverage:
       default:
         threshold: 1% # Avoid false negatives
 comment: 
-  # make the comments less noisy
   require_changes: true

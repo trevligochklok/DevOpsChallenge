@@ -2,14 +2,14 @@ on:
   pull_request:
   push:
     paths:
-      - service2/**
+      - service1
     branches:
       - trunk
 
 defaults:
   run:
     shell: bash
-    working-directory: ./service2
+    working-directory: ./service1
 
 name: Check and Lint
 jobs:
