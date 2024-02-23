@@ -1,4 +1,19 @@
-# DO SOMETHING
-# 2 Stages
-# Build
-# Prod
+FROM rust:latest AS builder
+WORKDIR /app
+
+COPY ../Cargo.toml .
+RUN mkdir src && echo "fn main() {}" > src/main.rs
+RUN cargo build --release
+
+COPY ../src src
+RUN cargo build --release
+
+RUN strip target/release/service2
+
+FROM gcr.io/distroless/cc-debian12 as development
+WORKDIR /app
+COPY --from=builder /app/target/release/service2 .
+
+EXPOSE 8080
+
+CMD ["./service2"]

@@ -1,1 +1,14 @@
 # Write Docker Compose for Service 2
+version: '3.8'
+
+services:
+  development:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      RUST_LOG: debug  # Set environment variables as needed for development
