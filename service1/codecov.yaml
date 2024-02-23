@@ -5,6 +5,6 @@ coverage:
   status: # https://docs.codecov.com/docs/commit-status
     project:
       default:
-        threshold: 1% # Avoid false negatives
+        threshold: 1%
 comment: 
   require_changes: true
