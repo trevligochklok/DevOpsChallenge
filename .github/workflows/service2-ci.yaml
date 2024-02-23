@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - trunk
+    paths:
+      - service2/**
 
 defaults:
   run:
